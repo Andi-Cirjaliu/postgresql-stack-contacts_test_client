@@ -29,7 +29,7 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         livenessProbe:
           httpGet:
-            path: /health
+            path: /
             port: {{ .Values.service.servicePort }}
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds}}
           periodSeconds: {{ .Values.livenessProbe.periodSeconds}}
