@@ -41,7 +41,7 @@ const ContactsState = (props) => {
       dispatch({ type: GET_CONTACTS, payload: data });
     } catch (error) {
       console.error(error.response);
-      setError(error.response.data.msg);
+      setError(error.response ? error.response.data.msg : error.message);
     }
   };
 
@@ -61,7 +61,7 @@ const ContactsState = (props) => {
       dispatch({ type: ADD_CONTACT, payload: data });
     } catch (error) {
       console.error(error.response);
-      setError(error.response.data.msg);
+      setError(error.response ? error.response.data.msg : error.message);
     }
   };
 
@@ -81,7 +81,7 @@ const ContactsState = (props) => {
       dispatch({ type: UPDATE_CONTACT, payload: data });
     } catch (error) {
       console.error(error.response);
-      setError(error.response.data.msg);
+      setError(error.response ? error.response.data.msg : error.message);
     }
   };
 
@@ -99,7 +99,7 @@ const ContactsState = (props) => {
       dispatch({ type: DELETE_CONTACT, payload: id });
     } catch (error) {
       console.error(error.response);
-      setError(error.response.data.msg);
+      setError(error.response ? error.response.data.msg : error.message);
     }
   };
 
